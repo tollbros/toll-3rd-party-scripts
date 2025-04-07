@@ -40,7 +40,7 @@
     <script>
         function loadThirdPartyScript() {
             const script = document.createElement('script');
-            script.src = "/external-assets/third-party.js"; 
+            script.src = "./external-assets/third-party.js"; 
             script.onload = function() {
                 console.log('3rd party script loaded successfully.');
                 const changeMe = document.getElementById('content_space');
@@ -56,7 +56,7 @@
         function loadThirdPartyCSS() {
             const link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = '/external-assets/third-party.css'; // Path to your CSS file
+            link.href = './external-assets/third-party.css'; // Path to your CSS file
             link.onload = function() {
                 console.log('3rd party CSS loaded successfully.');
             };
