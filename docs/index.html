@@ -10,9 +10,9 @@
 <body>
     
     <p>We call your scripts remotely and not on load to keep our initial load small. The User usually initializes the load by button click.</p>
-    <p>Pressing the button below appends&nbsp;<span class="code">external-assets/third-party.js</span> and <span class="code">external-assets/third-party.css</span> to the DOM, loading them.</p>
-    <p>Once those are both loaded we call a function inside third-party.js by <span class="code">thirdPartyInit(theElement)</span> and pass the container below's DOM element:</p>
-    <p><span class="code">const theElement = document.getElementById('content_space');</span></p>
+    <p>Pressing the button below appends&nbsp;<span class="code">external-assets/third-party.js</span> (<a href="https://github.com/tollbros/toll-3rd-party-scripts/blob/main/docs/external-assets/third-party.js" target="blank">file</a>) and <span class="code">external-assets/third-party.css</span> (<a href="https://github.com/tollbros/toll-3rd-party-scripts/blob/main/docs/external-assets/third-party.css" target="blank">file</a>) to the DOM, loading them.</p>
+    <p>Once those are both loaded we call a function inside third-party.js by <span class="code">thirdPartyInit(theElement)</span> (<a href="https://github.com/tollbros/toll-3rd-party-scripts/blob/main/docs/external-assets/third-party.js#L3" target="blank">file</a>) and pass the container below's DOM element:</p>
+    <p><span class="code">const theElement = document.getElementById('content_space');</span> (<a href="https://github.com/tollbros/toll-3rd-party-scripts/blob/main/docs/toll-assets/toll.js#L6-L7" target="blank">file</a>)</p>
     <button class="loadButton" id="toggleButton">Load 3rd Party Scrips and CSS</button>
     <div class="content_holder">
         <div id="content_space">
@@ -21,8 +21,8 @@
     </div>
 
     <div id="toll_space">
-        <p>We expose our functions like <span class="code">Toll.doThing(&lt;string&gt;);</span></p>
-        <p>The <span class="code">external-assets/third-party.js</span> calls this function in its <span class="code">divClick()</span> function which passed the div ID to the Toll function. </p>
+        <p>We expose our functions like <span class="code">Toll.doThing(&lt;string&gt;);</span> (<a href="https://github.com/tollbros/toll-3rd-party-scripts/blob/main/docs/toll-assets/toll.js#L34-L41" target="blank">file</a>)</p>
+        <p>The <span class="code">external-assets/third-party.js</span> calls this function in its <span class="code">divClick()</span> (<a href="https://github.com/tollbros/toll-3rd-party-scripts/blob/main/docs/external-assets/third-party.js#L14" target="blank">file</a>) function which passed the div ID to the Toll function. </p>
         <p>For demonstration purposes we show that passed ID in the `output` div below:</p>
         <div class="content_holder">
             <div id="output">

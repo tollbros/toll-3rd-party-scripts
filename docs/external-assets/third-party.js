@@ -2,8 +2,7 @@
 
 function thirdPartyInit(targetElement) {
     console.log('third-party.js - thirdPartyInit called');
-    
-    console.log('targetElement:', targetElement);
+
     if (!targetElement) {
         console.error('targetElement is not provided');
         return;
