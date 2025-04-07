@@ -35,7 +35,7 @@ window.Toll = {};
 
 Toll.doThing = function(myValue) {
     console.log('Toll.doThing called with value:', myValue);
-    const outputElement = document.getElementById('out_put');
+    const outputElement = document.getElementById('output');
     outputElement.innerHTML = `third-party div clickded: <strong>${myValue}</strong>`;
 
 }
