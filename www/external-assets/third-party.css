@@ -1,0 +1,7 @@
+
+div.thirdParty {
+    background: #333;
+    color: #ccc;
+    user-select: none;
+    cursor: pointer;
+}

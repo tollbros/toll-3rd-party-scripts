@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toll Brothers 3rd Party Import Design</title>
+
+   <style>
+        .content_holder {
+            width: 700px;
+            height: 200px;
+            border: 1px solid #ccc; /* Light gray border */
+            margin: 20px;
+        }
+
+        button {
+            padding: 8px;
+            margin: 20px;
+        }
+   </style>
+
+</head>
+<body>
+    <button class="loadButton" id="toggleButton">Load 3rd Party Scrips and CSS</button>
+    <div class="content_holder">
+        <div id="content_space">
+            Replace me with 3rd party content when the button is clicked.
+        </div>
+    </div>
+
+    <div id="toll_space">
+        <h2>Toll Brothers Content</h2>
+        <p>This is the original content provided by Toll Brothers.</p>
+        <div id="out_put">
+            pending
+        </div>
+    </div>
+
+
+    <script>
+        function loadThirdPartyScript() {
+            const script = document.createElement('script');
+            script.src = "/external-assets/third-party.js"; 
+            script.onload = function() {
+                console.log('3rd party script loaded successfully.');
+                const changeMe = document.getElementById('content_space');
+                thirdPartyInit(changeMe); // Assuming the 3rd party script exposes a global function to initialize itself
+                //document.getElementById('content_space').innerHTML = '3rd party content loaded!';
+            };
+            script.onerror = function() {
+                console.error('Failed to load the 3rd party script.');
+            };
+            document.head.appendChild(script);
+        }
+
+        function loadThirdPartyCSS() {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = '/external-assets/third-party.css'; // Path to your CSS file
+            link.onload = function() {
+                console.log('3rd party CSS loaded successfully.');
+            };
+            link.onerror = function() {
+                console.error('Failed to load the 3rd party CSS.');
+            };
+            document.head.appendChild(link);
+        }
+
+        function loadThirdPartyAssets() {
+            // Load CSS first to ensure styles are applied before the script
+            loadThirdPartyCSS();
+
+            // Then load the script
+            loadThirdPartyScript();
+        }
+
+        window.Toll = {};
+
+        Toll.doThing = function(myValue) {
+            console.log('Toll.doThing called with value:', myValue);
+            const outputElement = document.getElementById('out_put');
+            outputElement.innerHTML = `third-party div clickded: <strong>${myValue}</strong>`;
+
+        }
+
+        document.getElementById('toggleButton').addEventListener('click', loadThirdPartyAssets);
+    </script>
+</body>
+</html>
