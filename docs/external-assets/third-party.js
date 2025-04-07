@@ -19,7 +19,7 @@ function thirdPartyInit(targetElement) {
         newDiv.classList.add("thirdParty");
         newDiv.id = `third-party-div-${i + 1}`; 
         newDiv.addEventListener('click', divClick); 
-        newDiv.textContent = `This is div ${i + 1} added by third-party script`;
+        newDiv.textContent = `Div ${i + 1} | CLICK ME to fire Toll.doThing("third-party-div-${i + 1}")`;
         newDiv.style.border = '1px solid black';
         newDiv.style.margin = '5px';
         newDiv.style.padding = '10px';
