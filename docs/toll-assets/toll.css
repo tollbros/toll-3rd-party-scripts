@@ -1,0 +1,21 @@
+.content_holder {
+    width: 700px;
+    height: 200px;
+    border: 1px solid #ccc;
+    margin: 20px;
+}
+
+button {
+    padding: 8px;
+    margin: 10px 20px;;
+}
+
+p {
+    margin: 10px;
+}
+
+.code {
+    display: inline-block;
+    font-family: monospace;
+    font-weight: bold;
+}
